@@ -7,13 +7,13 @@ let client = class LucentClient {
             access_key,
             secret_key,
             locale
-        }    
+        }
 
         let httpClient = axios 
 
-        httpClient.defaults.headers.common['Lucent-Channel'] = channel
-        httpClient.defaults.headers.common['Lucent-User'] = access_key
-        httpClient.defaults.headers.common['Authorization'] = 'Bearer ' + secret_key
+        httpClient.defaults.headers.common['Lucent-Channel']  = channel
+        httpClient.defaults.headers.common['Lucent-User']     = access_key
+        httpClient.defaults.headers.common['Authorization']   = 'Bearer ' + secret_key
         httpClient.defaults.headers.common['Accept-Language'] = locale
         
         httpClient.defaults.baseURL = "https://api.lucentcms.com/api/"
