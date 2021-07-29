@@ -35,6 +35,8 @@ let client = class LucentClient {
                 data, params, headers
             }
 
+            console.log("conf->",conf,'data =>',data)
+
             let res = await this.httpClient[method](endpoint, conf)
             
             if (res.status >= 400) {
@@ -84,19 +86,21 @@ let client = class LucentClient {
         return this.baseRequest({ method: 'post', endpoint: 'documents/', data: requestData, headers })
     }
 
-    upload(file, filename, headers = {}) {
+    upload(files = [], filename, headers = {}) {
 
-        let requestData = []
+        let formData = new FormData()
 
-        requestData.push({
-            name: 'files[]',
-            contents: file,
-            filename,
+        files.forEach((element,i) => {
+            formData.append('multipart[' + i + ']',element)  
         })
         
+        for (var [key, value] of formData.entries()) { 
+            console.log('k->v',key, value);
+        }
+
         headers['Content-Type'] = 'multipart/form-data'
 
-        return this.baseRequest({ method: 'post', endpoint: 'files/', data: requestData, headers })
+        return this.baseRequest({ method: 'post', endpoint: 'files/', data: formData, headers })
     }
 }
 
