@@ -13,6 +13,7 @@ export class LucentClient {
 
         httpClient.defaults.headers.common['Lucent-Channel']  = channel
         httpClient.defaults.headers.common['Authorization']   = 'Bearer ' + secret_key
+        httpClient.defaults.headers.common['Content-Type']    = 'application/json'
 
         if (access_key) {
             httpClient.defaults.headers.common['Lucent-User'] = access_key
@@ -61,19 +62,19 @@ export class LucentClient {
         return this.baseRequest({ method: 'get',endpoint, params, headers })
     }
     
-    post(data = {}, headers = {}) {
+    post(endpoint, data = {}, headers = {}) {
         return this.baseRequest({ method: 'post',endpoint, data, headers })
     }
 
-    put(data = {}, headers = {}) {
+    put(endpoint, data = {}, headers = {}) {
         return this.baseRequest({ method: 'put',endpoint, data, headers })
     }
 
-    patch(data = {}, headers = {}) {
+    patch(endpoint, data = {}, headers = {}) {
         return this.baseRequest({ method: 'patch',endpoint, data, headers })
     }
 
-    delete(data = {}, headers = {}) {
+    delete(endpoint, data = {}, headers = {}) {
         return this.baseRequest({ method: 'delete',endpoint, data, headers })
     }
     
