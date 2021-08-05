@@ -1,9 +1,9 @@
 export class LucentQueryBuilder {
 
-    constructor(content_type = null) {
+    constructor(contentType = null) {
         this.q = {}
 
-        this.contentType = content_type
+        this.contentType = contentType
     }
 
     where(field, value) {
