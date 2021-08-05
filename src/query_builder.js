@@ -1,6 +1,6 @@
 export class LucentQueryBuilder {
 
-    constructor({ path, content_type }) {
+    constructor(path = null, content_type = null) {
         this.q = {}
 
         this.path = path
@@ -105,6 +105,16 @@ export class LucentQueryBuilder {
     sort(value) {
         this.q['sort'] = value
         return this 
+    }
+
+    include(value) {
+        this.q['include'] = value
+        return this
+    }
+
+    includeAll() {
+        this.q['include'] = '*'
+        return this
     }
 
     raw(field, value = null, operator = null) {
