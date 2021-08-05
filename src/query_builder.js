@@ -1,9 +1,8 @@
 export class LucentQueryBuilder {
 
-    constructor(path = null, content_type = null) {
+    constructor(content_type = null) {
         this.q = {}
 
-        this.path = path
         this.contentType = content_type
     }
 
@@ -139,15 +138,18 @@ export class LucentQueryBuilder {
             }
             str += key + "=" + this.q[key]
         }
-
-        if(this.contentType !== null) {
-            str += "schema=" + this.contentType
-        }
-
-        if(this.path !== null) {
-            return this.path + '?' + str
-        }
-
         return '?' + str 
+    }
+
+    getQuery(withSchema = true) {
+
+        let q = this.q 
+
+        if (withSchema === true && this.contentType !== null) {
+            q['schema'] = this.contentType
+            return q
+        } 
+
+        return q
     }
 }
