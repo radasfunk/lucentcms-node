@@ -41,8 +41,6 @@ export class LucentClient {
                 data, params, headers
             }
 
-            console.log("conf->",conf,'data =>',data)
-
             let res = await this.httpClient[method](endpoint, conf)
             
             if (res.status >= 400) {
@@ -93,7 +91,8 @@ export class LucentClient {
     }
 
     upload(files = [], filename, headers = {}) {
-
+        console.error('under development')
+        return 
         let formData = new FormData()
 
         files.forEach((element,i) => {
