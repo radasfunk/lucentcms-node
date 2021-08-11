@@ -215,6 +215,12 @@ let form = new FormData
 
 form.append('files[0]',event.target.files[0])
 
+// or if you have multiple files
+
+listList.forEach((file,i) => {
+  form.append('files[' + i +']',file)
+})
+
 lucy.upload(form)
   .then(res => {
     console.log('successfully uploaded! check res.data[]',res)
