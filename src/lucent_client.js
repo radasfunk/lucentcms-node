@@ -39,10 +39,10 @@ export class LucentClient {
     baseRequest({ method, endpoint,data = {}, params = {}, headers = {}}) {
         let promise = new Promise(async (resovle, reject) => {
             const conf = {
-                data, params, headers
+                params, headers
             }
 
-            let res = await this.httpClient[method](endpoint, conf)
+            let res = await this.httpClient[method](endpoint, data,conf)
             
             if (res.status >= 400) {
                 reject(res)
@@ -91,21 +91,10 @@ export class LucentClient {
         return this.baseRequest({ method: 'post', endpoint: 'documents/', data: requestData, headers })
     }
 
-    upload(files = [], filename, headers = {}) {
-        console.error('under development')
-        return 
-        let formData = new FormData()
-
-        files.forEach((element,i) => {
-            formData.append('multipart[' + i + ']',element)  
-        })
-        
-        for (var [key, value] of formData.entries()) { 
-            console.log('k->v',key, value);
-        }
+    upload(form, headers = {}) {
 
         headers['Content-Type'] = 'multipart/form-data'
 
-        return this.baseRequest({ method: 'post', endpoint: 'files/', data: formData, headers })
+        return this.baseRequest({ method: 'post', endpoint: 'files', data: form, headers })
     }
 }

@@ -45,7 +45,7 @@ As of now, we have the following methods
 - delete() 
 - getDocuments()
 - createDocument()
-- upload() # WIP 
+- upload() 
 
 All of these will return a promise that can be used with `then`, `catch` and `finally`. 
 
@@ -89,7 +89,7 @@ let data = {
 }
 
 let headers = {
-    'Custom-Header' : 'Custom-Value'
+  'Custom-Header' : 'Custom-Value'
 }
 
 lucy.post('documents',data, headers)
@@ -198,6 +198,34 @@ let content =  {
 }
 ```
 
+
+### upload() 
+
+*Method Signature*
+
+```node
+upload(formData) 
+```
+
+To uploaded a single of multiple files, you must create a form data instance and pass it as an argument in the `upload` method.
+
+```node
+
+let form = new FormData
+
+form.append('files[0]',event.target.files[0])
+
+lucy.upload(form)
+  .then(res => {
+    console.log('successfully uploaded! check res.data[]',res)
+  })
+  .catch(err => {
+    console.log('there was an error',err)
+  })
+  .finally(() => {
+    console.log('finally do something!')
+  })
+```
 ### LucentQueryBuilder
 
 It is a helping class that will help you build up your query.
