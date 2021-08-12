@@ -325,21 +325,16 @@ builder.where('title', 'hello')
 lucy.get('documnets', builder.getQuery() )
   .then(res => {})
   .catch( err => {})
-
 ```
 
+### Changelog
 
+Please see [CHANGELOG](CHANGELOG.md) for more information what has changed recently.
 
+### Contributing
 
+Please see [CONTRIBUTING](CONTRIBUTING.md) for details.
 
+### Security
 
-
-
-
-
-
-
-
-
-
-
+If you discover any security related issues, please email hey@lucentcms.com instead of using the issue tracker.
