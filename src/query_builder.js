@@ -14,10 +14,6 @@ export default class LucentQueryBuilder {
         return this.raw(field,value,'or')
     }
 
-    in(field,value) {
-        return this.raw(field,value,'in')
-    }
-
     regex(field,value) {
         return this.raw(field,value,'regex')
     }
