@@ -14,7 +14,7 @@ npm i @radical-elements/lucentcms-node
 We have two files that can be imported, the first one being the `LucentClient` and the second one being `LucentQueryBuilder`. 
 
 ```node
-import { LucentClient, LucentQueryBuilder } from 'lucentcms-node'
+import { LucentClient, LucentQueryBuilder } from '@radical-elements/lucentcms-node'
 ```
 
 ### Configure
