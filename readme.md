@@ -202,10 +202,10 @@ let content =  {
 *Method Signature*
 
 ```node
-upload(formData) 
+upload(formData, headers = {}) 
 ```
 
-To uploaded a single of multiple files, you must create a form data instance and pass it as an argument in the `upload` method.
+To upload a single or multiple files, you must create a form data instance and pass it as an argument in the `upload` method.
 
 ```node
 
@@ -215,7 +215,7 @@ form.append('files[0]',event.target.files[0])
 
 // or if you have multiple files
 
-listList.forEach((file,i) => {
+listOfFiles.forEach((file,i) => {
   form.append('files[' + i +']',file)
 })
 
