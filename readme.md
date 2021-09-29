@@ -4,11 +4,9 @@ LucentCMS driver for node js.
 
 ### installation 
 
-For the time being, it is still in development mode. So, to use this, you'll have to git clone the repo and add its path in your project's package json.
 
-```json
-//package.json
-"lucentcms-node": "file:../path/to/lucentcmsnode",
+```bash
+npm i @radical-elements/lucentcms-node
 ```
 
 ### Import
