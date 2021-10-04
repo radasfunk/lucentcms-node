@@ -4,7 +4,5 @@
 const LucentClient = require('./lucent_client')
 const LucentQueryBuilder = require('./query_builder')
 
-export {
-    LucentClient,
-    LucentQueryBuilder 
-}
+module.exports.LucentClient = LucentClient
+module.exports.LucentQueryBuilder = LucentQueryBuilder
