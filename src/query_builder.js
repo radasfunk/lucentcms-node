@@ -1,4 +1,4 @@
-export default class LucentQueryBuilder {
+module.exports.default = class LucentQueryBuilder {
     constructor(contentType = null) {
         this.q = {}
 
