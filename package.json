@@ -13,6 +13,7 @@
   "author": "thearyanahmed",
   "license": "MIT",
   "dependencies": {
+    "@radical-elements/lucentcms-node": "^1.0.7",
     "axios": "^0.21.1"
   },
   "devDependencies": {
