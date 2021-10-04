@@ -14,6 +14,12 @@ npm i @radical-elements/lucentcms-node
 We have two files that can be imported, the first one being the `LucentClient` and the second one being `LucentQueryBuilder`. 
 
 ```node
+const { LucentClient , LucentQueryBuilder } = require('@radical-elements/lucentcms-node')
+```
+
+If you are inside an module or using vue js (if you have access to **import** keyword),
+
+```node
 import { LucentClient, LucentQueryBuilder } from '@radical-elements/lucentcms-node'
 ```
 
