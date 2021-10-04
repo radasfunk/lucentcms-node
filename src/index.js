@@ -1,5 +1,5 @@
-import LucentQueryBuilder from './query_builder'
-import LucentClient from './lucent_client'
+const LucentClient = require('./lucent_client').default
+const LucentQueryBuilder = require('./query_builder').default
 
 export {
     LucentClient,
