@@ -1,6 +1,6 @@
 {
   "name": "@radical-elements/lucentcms-node",
-  "version": "1.0.12",
+  "version": "1.0.13",
   "description": "JavaScript client for Lucent CMS",
   "main": "src/index.js",
   "scripts": {
