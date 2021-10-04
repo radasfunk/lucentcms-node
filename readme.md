@@ -4,11 +4,9 @@ LucentCMS driver for node js.
 
 ### installation 
 
-For the time being, it is still in development mode. So, to use this, you'll have to git clone the repo and add its path in your project's package json.
 
-```json
-//package.json
-"lucentcms-node": "file:../path/to/lucentcmsnode",
+```bash
+npm i @radical-elements/lucentcms-node
 ```
 
 ### Import
@@ -16,7 +14,7 @@ For the time being, it is still in development mode. So, to use this, you'll hav
 We have two files that can be imported, the first one being the `LucentClient` and the second one being `LucentQueryBuilder`. 
 
 ```node
-import { LucentClient, LucentQueryBuilder } from 'lucentcms-node'
+import { LucentClient, LucentQueryBuilder } from '@radical-elements/lucentcms-node'
 ```
 
 ### Configure
@@ -204,10 +202,10 @@ let content =  {
 *Method Signature*
 
 ```node
-upload(formData) 
+upload(formData, headers = {}) 
 ```
 
-To uploaded a single of multiple files, you must create a form data instance and pass it as an argument in the `upload` method.
+To upload a single or multiple files, you must create a form data instance and pass it as an argument in the `upload` method.
 
 ```node
 
@@ -217,7 +215,7 @@ form.append('files[0]',event.target.files[0])
 
 // or if you have multiple files
 
-listList.forEach((file,i) => {
+listOfFiles.forEach((file,i) => {
   form.append('files[' + i +']',file)
 })
 

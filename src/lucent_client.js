@@ -37,7 +37,7 @@ export default class LucentClient {
     }
 
     baseRequest({ method, endpoint,data = {}, params = {}, headers = {}}) {
-        let promise = new Promise(async (resovle, reject) => {
+        let promise = new Promise(async (resolve, reject) => {
             const conf = {
                 params, headers
             }
@@ -50,7 +50,7 @@ export default class LucentClient {
                 if (res['data']['errors'] !== null && res['data']['errors'].length > 0) {
                     reject(res['data'])
                 } else {
-                    resovle(res['data'])
+                    resolve(res['data'])
                 }
             }
         })
