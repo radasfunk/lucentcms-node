@@ -1,6 +1,6 @@
 import axios from "axios"
 
-export default class LucentClient {
+export class LucentClient {
     constructor({ channel, access_key, secret_key, locale }) {
         this.config = {
             channel,
