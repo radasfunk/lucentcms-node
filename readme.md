@@ -2,8 +2,7 @@
 
 LucentCMS driver for node js.
 
-### installation 
-
+### Installation 
 
 ```bash
 npm i @radical-elements/lucentcms-node

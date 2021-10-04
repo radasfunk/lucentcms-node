@@ -1,6 +1,6 @@
 {
   "name": "@radical-elements/lucentcms-node",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "JavaScript client for Lucent CMS",
   "main": "src/index.js",
   "scripts": {
@@ -13,7 +13,6 @@
   "author": "thearyanahmed",
   "license": "MIT",
   "dependencies": {
-    "@radical-elements/lucentcms-node": "^1.0.7",
     "axios": "^0.21.1"
   },
   "devDependencies": {
